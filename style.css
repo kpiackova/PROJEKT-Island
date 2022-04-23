@@ -12,13 +12,253 @@ html { box-sizing: border-box; }
 	Merriweather		základní font na stránce
 	Raleway					nadpisy a menu
 	Oba fonty jsou dostupné na Google Fonts.
+
+	font-family: 'Merriweather', serif; 	400, 400 italic
+    font-family: 'Raleway', sans-serif;		500, 700
 */
+:root {
+	--seda: #f5f5f5;
+	--modra: #629fe0;
+}
 
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #f5f5f5;
 	font-size: 16px;
 	line-height: 1.6;
+	font-family: 'Merriweather', serif; 
 }
 
+section {
+	margin: 40px 0;
+}
+
+h1,
+h2 {
+	font-family: 'Raleway', sans-serif;	
+}
+
+.hlavicka {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0,0,0, 0.2)), url(./images/island-hlavicka.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	font-size: 14px;
+}
+
+h1 {
+	font-size: 46px;
+	font-weight: 700;
+	margin: 0;
+}
+
+.hlavicka p {
+	margin: 20px 10px;
+}
+
+.jmeno {
+	color: rgb(201, 201, 201);
+	font-style: italic;
+}
+
+.jmeno::before {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 1px;
+	background-color: white;
+	margin: 10px auto;
+}
+
+li {
+	list-style: none;
+	text-align: center;
+	border-bottom: 1px solid var(--seda);
+}
+
+ul {
+	padding: 0;
+	margin: 30px 0 40px 0;
+}
+
+
+.menu a {
+	color: rgb(145, 145, 145);
+	font-family: 'Raleway', sans-serif;	
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+p {
+	margin: 20px 14px;
+	font-size: 14px;
+}
+
+h2 {
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1;
+	margin-left: 14px;
+}
+
+h2::after {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 3px;
+	background-color: var(--modra);
+	margin: 20px -14px;
+}
+
+img {
+	width: 100%;
+}
+
+.obrazek-text {
+	margin: 40px 0;
+}
+
+.popisek,
+.foto-popisek {
+	color: rgb(145, 145, 145);
+	font-family: 'Raleway', sans-serif;
+	font-size: 10px;
+	text-align: center;
+	margin: 0;
+	line-height: 1.2;
+}
+
+a {
+	color: rgb(145, 145, 145);
+}
+
+.foto {
+	margin-bottom: 20px;
+}
+
+.foto-popisek::first-line {
+	font-weight: 800;
+	font-size: 12px;
+}
+
+.paticka {
+	background-image: linear-gradient(rgb(202, 192, 192) 0.2%, white 20%);
+	padding-top: 10px;
+	margin: 0;
+}
+
+.paticka p {
+	font-size: 10px;
+	color:rgb(145, 145, 145);
+}
+
+@media screen and (min-width: 540px) {
+	ul {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	li {
+		border: 1px solid var(--seda);
+		width: 100%;
+	}
+
+	.obrazek-text {
+		position: relative;
+	}
+
+	.popisek {
+		position: absolute;
+		right: 2%;
+		bottom: 6%; 
+		color: white;
+	}
+
+	.popisek a {
+		color: white;
+	}
+
+	.fotky {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.hlavicka p {
+		padding: 0 180px;
+	}
+	
+	body {
+		background-color: var(--seda);
+	}
+
+	main {
+		width: 960px;
+		background-color: white;
+		margin: -60px auto;
+		box-shadow: 0 60px 10px rgb(145, 145, 145);
+	}
+
+	.hlavicka {
+		padding-bottom: 80px;
+	}
+
+	.menu-uvod {
+		display: flex;
+		align-items: flex-start;
+		margin: 0;
+		padding: 20px 40px 0 40px;
+	}
+
+	ul {
+		flex-direction: column;
+		margin-top: 20px;
+		width: 240px;
+		
+	}
+
+	.uvod {
+		margin: 0;
+		
+	}
+
+	li {
+		text-align: left;
+		border: none;
+		border-bottom: 1px solid var(--seda);
+	
+	}
+
+	.vpravo {
+		padding: 0 40px 0 240px;
+	}
+
+	.vlevo {
+		padding: 0 240px 0 40px;
+	}
+
+
+
+
+	h2::after {
+		margin: 20px -55px;
+		width: 80px;
+	}
+
+
+	.fotky {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.paticka {
+		background-image: none;
+	}
+
+
+
+}
